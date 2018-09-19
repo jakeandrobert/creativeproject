@@ -1,0 +1,37 @@
+<html>
+    <head>
+        
+    </head>
+<body>
+    <p>*Input fractions in decimal form</p><br><br>
+<form>
+    Number of stars in the Milky Way Galaxy:<br>
+    <input type="number" step="any" name="numStars" id="numStars"><br><br>
+    Number of stars with planets in the Milky Way Galaxy:<br>
+    <input type="number" step="any" name="numStarsWithPlanets" id="numStarsWithPlanets"><br><br>
+    Fraction of planets that can potentially support life (per star in with planets):<br>
+    <input type="number" step="any" name="numPlansPotentialLife" id="numPlansPotentialLife"><br><br>
+    Fraction of planets that can go on to actually support life:<br>
+    <input type="number" step="any" name="numPlanetsWithLife" id="numPlanetsWithLife"><br><br>
+    Fraction of planets that can go on to support intelligent life:<br>
+    <input type="number" step="any" name="intelligentLife" id="intelligentLife"><br><br>
+    Fraction of planets with civilizations that develop technology detectable from space:<br>
+    <input type="number" step="any" name="numPlanetsWithCiv" id="numPlanetsWithCiv"><br><br>
+    Length of time such civilizations release detectable signs into space:<br>
+    <input type="number" step="any" name="civLifetime" id="civLifetime"><br><br>
+</form>
+    
+<button onclick="getProbability(document.getElementById('numStars').value, document.getElementById('numStarsWithPlanets').value, document.getElementById('numPlansPotentialLife').value, document.getElementById('numPlanetsWithLife').value, document.getElementById('intelligentLife').value, document.getElementById('numPlanetsWithCiv').value, document.getElementById('civLifetime').value)">Calculate</button>
+<p id="demo"></p>
+
+<script>
+    function getProbability(numStars, numStarsWithPlanets, numPlansPotentialLife, numPlanetsWithLife, intelligentLife, numPlanetsWithCiv, civLifetime) {
+        var numCivs = 0.0;
+        numCivs = numStars * numStarsWithPlanets * numPlansPotentialLife *numPlanetsWithLife * intelligentLife * numPlanetsWithCiv * civLifetime;
+        var numCivilizations = Math.round(numCivs);
+        document.getElementById("demo").innerHTML = "Number of civilizations in the Milky Way Galaxy: " + numCivilizations;
+    }
+    
+</script>
+</body>
+</html>
