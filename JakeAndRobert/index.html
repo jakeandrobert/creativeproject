@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <link rel="stylesheet" type="text/css" href="collab.css">
+     <script>
+        
+     </script>
+   </head>
+
+   <body>
+       <div>
+        
+           <div> 
+               <p class="firstHeader">The Fermi Paradox</p>
+               <img id="triangle" class="centered" src="sphere.gif">
+               <p class="secondHeader">The Drake Equation</p>
+            </div>
+        
+        </div> 
+       
+           <p id="explanationParagraph">
+               The Fermi paradox is one of the curiosities of modern
+               astronomy, proposed by Enrico Fermi in 1950. It brings
+               to attention the apparent lack of extraterrestrial 
+               life in our galaxy. Dr. Fermi's argument goes as such: given 
+               that fact that intelligent life as we know it tends
+               to expand and find new habitats, and often invents
+               clever ways to overcome scarcity, and given the number of 
+               stars and planets for life to develop on in our galaxy 
+               alone, probability seems to dictate that there should be 
+               many intelligent extraterrestrial civilizations. Yet, for 
+               all that, we see none, and thus the paradox. As Dr. Fermi
+               famously proclaimed over lunch in 1950: "Where are they!?" 
+           </p>
+           
+            <p id="explanationParagraph2">
+              The Drake equation is a more rigorous formulation of the Fermi paradox. 
+               Developed by Dr. Frank Drake, famous for being among the founders of SETI, an 
+               astronomer and astrophysicist, it is a probabilistic equation to 
+               attempt to determine the number of communicating extraterrestrial
+               civilizations in our galaxy. It multiplies several factors, including
+               the number of stars in the galaxy, likelihood of those stars having
+               planets, likelihood of those planets developing life, etc. to 
+               give a possible number. It is interesting in that even with abysmally 
+               low inputs, the equation predicts a high number of civilizations.
+           </p>
+           
+           <p id="Equation"> Detectable Civs = stars in Milky Way * fraction of stars with planets * 
+           fraction of planets suitable for life * fraction of planets that develop life 
+            * fraction that develop intelligent life * fraction of civilizations that develop detectable technology * signal time span </p></br>
+           
+           
+        <div id="calculatorInterface">
+        <form>
+            <label class="ELabel">Number of stars in the Milky Way Galaxy:</label>
+            <input type="number" step="any" name="numStars" id="numStars" style="display:inline-block"><br><br>
+             <label class="ELabel">Number of stars with planets in the Milky Way Galaxy:</label>
+            <input type="number" step="any" name="numStarsWithPlanets" id="numStarsWithPlanets"><br><br>
+             <label class="ELabel">Fraction of planets that can potentially support life (per star in with planets):</label>
+            <input type="number" step="any" name="numPlansPotentialLife" id="numPlansPotentialLife"><br><br>
+             <label class="ELabel">Fraction of planets that can go on to actually support life:</label>
+            <input type="number" step="any" name="numPlanetsWithLife" id="numPlanetsWithLife"><br><br>
+             <label class="ELabel">Fraction of planets that can go on to support intelligent life:</label>
+            <input type="number" step="any" name="intelligentLife" id="intelligentLife"><br><br>
+             <label class="ELabel">Fraction of planets with civilizations that develop technology detectable from space:</label>
+            <input type="number" step="any" name="numPlanetsWithCiv" id="numPlanetsWithCiv"><br><br>
+            <label class="ELabel"> Length of time such civilizations release detectable signs into space:</label>
+            <input type="number" step="any" name="civLifetime" id="civLifetime"><br><br>
+        </form>
+     </div>
+        <button id="button" onclick="getProbability(document.getElementById('numStars').value, document.getElementById('numStarsWithPlanets').value, document.getElementById('numPlansPotentialLife').value, document.getElementById('numPlanetsWithLife').value, document.getElementById('intelligentLife').value, document.getElementById('numPlanetsWithCiv').value, document.getElementById('civLifetime').value)">Calculate</button>
+         <p id="demo" class="ELabel"></p>
+       
+       <p id="extendBottom">_____</p>
+       
+       <script>
+    function getProbability(numStars, numStarsWithPlanets, numPlansPotentialLife, numPlanetsWithLife, intelligentLife, numPlanetsWithCiv, civLifetime) {
+        var numCivs = 0.0;
+        numCivs = numStars * numStarsWithPlanets * numPlansPotentialLife *numPlanetsWithLife * intelligentLife * numPlanetsWithCiv * civLifetime;
+        var numCivilizations = Math.round(numCivs);
+        document.getElementById("demo").innerHTML = "Number of civilizations in the Milky Way Galaxy: " + numCivilizations;
+       }
+       </script>
+   </body>
+</html>

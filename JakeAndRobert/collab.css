@@ -1,0 +1,100 @@
+
+
+
+.centered {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+    transform: translate(-50%, -50%);
+    z-Index:-100;
+    height: 400px;
+    width: 400px;
+}
+
+body {
+    background-color:black;
+}
+
+.firstHeader {
+    top:46%;
+   position:absolute;
+    left:15%;
+    color:white;
+    Font-size: 30px;
+     font-family: "Arial";
+}
+
+.secondHeader {
+    top:46%;
+    position:absolute;
+    right:15%;
+    color:white;
+    Font-size: 30px;
+     font-family: "Arial";
+}
+
+
+#explanationParagraph{
+    color:white;
+    Font-size: 20px;
+    font-family: "Arial";
+    position:absolute;
+    display:block;
+    width:25%;
+    left:7%;
+    top: 110%;
+    
+}
+
+#calculatorInterface{
+  position:absolute;
+    top:150%;
+    left:17%;
+    text-align: right;
+}
+
+
+.ELabel{
+    color:white;
+     Font-size: 20px;
+    font-family: "Arial";
+}
+
+#Equation{
+  z-index: 1000;
+    color:white;
+     Font-size: 15px;
+    font-family: "Arial";
+    position:absolute;
+    top:90%;
+    left:5%;
+}
+
+#extendBottom{
+    top:200%;
+
+}
+
+#explanationParagraph2{
+   color:white;
+    Font-size: 20px;
+    font-family: "Arial";
+    position:absolute;
+    display:block;
+    width:25%;
+    right:7%;
+    top: 110%;  
+}
+
+#button{
+    position:absolute;
+    top: 185%;
+    left:50%;
+}
+
+#demo{
+    position:absolute;
+    top: 179%;
+    left:40%;
+}
+
